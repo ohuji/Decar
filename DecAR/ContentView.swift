@@ -84,6 +84,7 @@ struct ContentView : View {
                                 Image(systemName: "line.horizontal.3")
                                 .resizable()
                                 .scaledToFit()
+                                .foregroundColor(Color(red: 187/255, green: 138/255, blue: 82/255))
                                 .frame(width: 32, height: 32)
                             }
                         }
@@ -106,6 +107,7 @@ struct ContentView : View {
                                 Image(systemName: "gear")
                                 .resizable()
                                 .scaledToFit()
+                                .foregroundColor(Color(red: 187/255, green: 138/255, blue: 82/255))
                                 .frame(width: 32, height: 32)
                             }
                         }
@@ -120,6 +122,7 @@ struct ContentView : View {
                                 Image(systemName: "plus.circle.fill")
                                 .resizable()
                                 .scaledToFit()
+                                .foregroundColor(Color(red: 187/255, green: 138/255, blue: 82/255))
                                 .frame(width: 58, height: 58)
                                 .sheet(isPresented: $showingDetail) {
                                     FurnitureMenu(isPresented: $showingDetail)
@@ -427,7 +430,7 @@ struct ARViewContainer: UIViewRepresentable {
         
         arView.currentModelName = arView.makePeace()
 
-      //  arView.setupConfiguration()
+        arView.setupConfiguration()
         
         arView.addCoaching()
         

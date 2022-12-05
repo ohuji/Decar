@@ -39,6 +39,7 @@ struct FurnitureMenu: View {
                 Image(systemName: "arrow.backward")
                 .resizable()
                 .scaledToFit()
+                .foregroundColor(Color(red: 187/255, green: 138/255, blue: 82/255))
                 .frame(width: 32, height: 32)
             }
             .padding(.leading, 30)
@@ -53,15 +54,16 @@ struct FurnitureMenu: View {
      
                          isPresented = false
                     })
+                    .foregroundColor(.white)
                 }
+                .listRowBackground(Color(red: 109/255, green: 151/255, blue: 115/255))
                     
             }
-                
             Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
        // .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(red: 64/255, green: 208/255, blue: 236/255))
+        .background(Color(red: 12/255, green: 59/255, blue: 46/255))
         //.listStyle(.automatic)
         .listStyle(.sidebar)
         .edgesIgnoringSafeArea(.all)

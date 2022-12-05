@@ -20,10 +20,10 @@ struct Menu: View {
 
                 NavigationLink(destination: MapView()) {
                     Image(systemName: "map")
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color(red: 255/255, green: 186/255, blue: 0/255))
                         .imageScale(.large)
                     Text(menuMapText)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.white)
                             .font(.headline)
                 }
             }
@@ -32,10 +32,10 @@ struct Menu: View {
 
                 NavigationLink(destination: Settings()) {
                     Image(systemName: "gear")
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color(red: 255/255, green: 186/255, blue: 0/255))
                         .imageScale(.large)
                     Text(menuSettingsText)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.white)
                         .font(.headline)
                 }
             }
@@ -43,10 +43,10 @@ struct Menu: View {
             HStack {
                 NavigationLink(destination: FurnitureCollectionView()) {
                     Image(systemName: "map")
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color(red: 255/255, green: 186/255, blue: 0/255))
                         .imageScale(.large)
                     Text(menuFurnitureText)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.white)
                         .font(.headline)
                 }
             }
@@ -54,10 +54,10 @@ struct Menu: View {
             HStack {
                 NavigationLink(destination: ListingsView()) {
                     Image(systemName: "map")
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color(red: 255/255, green: 186/255, blue: 0/255))
                         .imageScale(.large)
                     Text(menuListingsText)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.white)
                         .font(.headline)
                 }
             }
@@ -66,7 +66,7 @@ struct Menu: View {
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(red: 64/255, green: 208/255, blue: 236/255).opacity(0.1))
+        .background(Color(red: 12/255, green: 59/255, blue: 46/255))
         .listStyle(.sidebar)
         .edgesIgnoringSafeArea(.all)
     }
