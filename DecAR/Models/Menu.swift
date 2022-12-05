@@ -46,7 +46,7 @@ struct Menu: View {
             .padding(.top, 30)
             HStack {
                 NavigationLink(destination: FurnitureCollectionView()) {
-                    Image(systemName: "map")
+                    Image(systemName: "bed.double")
                         .foregroundColor(Color(red: 255/255, green: 186/255, blue: 0/255))
                         .imageScale(.large)
                     Text(menuFurnitureText)
@@ -57,7 +57,7 @@ struct Menu: View {
             .padding(.top, 30)
             HStack {
                 NavigationLink(destination: ListingsView()) {
-                    Image(systemName: "map")
+                    Image(systemName: "house")
                         .foregroundColor(Color(red: 255/255, green: 186/255, blue: 0/255))
                         .imageScale(.large)
                     Text(menuListingsText)
