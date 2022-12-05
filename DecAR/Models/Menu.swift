@@ -16,6 +16,10 @@ let menuListingsText:LocalizedStringKey = "menuListingsText"
 struct Menu: View {
     var body: some View {
         VStack(alignment: .leading) {
+            Image("decar_logo_1")
+                .resizable()
+                .scaledToFit()
+                .padding(.top, 70)
             HStack {
 
                 NavigationLink(destination: MapView()) {
@@ -27,7 +31,7 @@ struct Menu: View {
                             .font(.headline)
                 }
             }
-            .padding(.top, 100)
+            .padding(.top, 30)
             HStack {
 
                 NavigationLink(destination: Settings()) {

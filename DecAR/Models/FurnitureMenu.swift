@@ -57,9 +57,7 @@ struct FurnitureMenu: View {
                     .foregroundColor(.white)
                 }
                 .listRowBackground(Color(red: 109/255, green: 151/255, blue: 115/255))
-                    
             }
-            Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
        // .frame(maxWidth: .infinity, alignment: .leading)
