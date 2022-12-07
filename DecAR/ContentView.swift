@@ -15,7 +15,7 @@ import SceneKit
 struct ContentView : View {
     @State var showMenu = false
     @State private var showFurMenu = false
-    @State var showSettings = false
+    @State var showInstructions = false
 
     @State private var showingDetail = false
 
@@ -40,30 +40,30 @@ struct ContentView : View {
                         GeometryReader { geometry in
                             ZStack(alignment: .leading) {
                                 //Color.purple
-                                ARViewContainer(showMenu: self.$showMenu, showFurMenu: self.$showFurMenu, showSettings: self.$showSettings, currentObject: self.$currentObject)
+                                ARViewContainer(showMenu: self.$showMenu, showFurMenu: self.$showFurMenu, showInstructions: self.$showInstructions, currentObject: self.$currentObject)
                                     .disabled(self.showMenu ? true : false)
-                                    .disabled(self.showSettings ? true : false)
+                                    .disabled(self.showInstructions ? true : false)
                                     .disabled(self.showFurMenu ? true : false)
                                     .edgesIgnoringSafeArea(.all)
-                                
-                                if self.showMenu {
-                                    Menu()
-                                        .frame(width: geometry.size.width/2)
-                                        .transition(.move(edge: .leading))
-                                }
-                                
-                                if !self.showMenu && !self.showSettings && self.showFurMenu {
-                                    FurnitureMenu(isPresented: .constant(self.showingDetail))
-                                                  //showFurMenu: .constant(self.showFurMenu))
-                                        .transition(.move(edge: .bottom))
-                                }
-                                
-                                if !self.showMenu && !self.showFurMenu && self.showSettings {
-                                    Settings()
-                                        .offset(x: geometry.size.width/2)
-                                        .frame(width: geometry.size.width/2)
-                                        .transition(.move(edge: .trailing))
-                                }
+                                                                
+                                    if self.showMenu {
+                                        Menu()
+                                            .frame(width: geometry.size.width/2)
+                                            .transition(.move(edge: .leading))
+                                    }
+                                                                
+                                    if !self.showMenu && !self.showInstructions && self.showFurMenu {
+                                        FurnitureMenu(isPresented: .constant(self.showingDetail))
+                                            //showFurMenu: .constant(self.showFurMenu))
+                                            .transition(.move(edge: .bottom))
+                                    }
+                                                            
+                                    if !self.showMenu && !self.showFurMenu && self.showInstructions {
+                                        Instructions()
+                                            .offset(x: geometry.size.width/2)
+                                            .frame(width: geometry.size.width/2)
+                                            .transition(.move(edge: .trailing))
+                                    }
                                 
                             }
                 .gesture(drag)
@@ -94,17 +94,17 @@ struct ContentView : View {
                     ToolbarItemGroup(placement: .navigationBarTrailing){
                         if !self.showFurMenu {
                             Button(action: {
-                                if !self.showSettings {
+                                if !self.showInstructions {
                                     withAnimation{
-                                        self.showSettings = true
+                                        self.showInstructions = true
                                     }
                                 } else {
                                     withAnimation{
-                                        self.showSettings = false
+                                        self.showInstructions = false
                                     }
                                 }
                             }) {
-                                Image(systemName: "gear")
+                                Image(systemName: "questionmark.circle")
                                 .resizable()
                                 .scaledToFit()
                                 .foregroundColor(Color(red: 187/255, green: 138/255, blue: 82/255))
@@ -124,6 +124,7 @@ struct ContentView : View {
                                 .scaledToFit()
                                 .foregroundColor(Color(red: 187/255, green: 138/255, blue: 82/255))
                                 .frame(width: 58, height: 58)
+                                .padding(.bottom, 25)
                                 .sheet(isPresented: $showingDetail) {
                                     FurnitureMenu(isPresented: $showingDetail)
                                 }
@@ -422,7 +423,7 @@ struct ARViewContainer: UIViewRepresentable {
     
     @Binding var showMenu: Bool
     @Binding var showFurMenu: Bool
-    @Binding var showSettings: Bool
+    @Binding var showInstructions: Bool
     @Binding var currentObject: SelectedFurniture
     
     func makeUIView(context: Context) -> ARView {

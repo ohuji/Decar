@@ -6,10 +6,9 @@
   
 */
 "menuMapText" = "Kartta";
-"menuSettingsText" = "Asetukset";
+"menuInstructionsText" = "Käyttöohjeet";
 "menuFurnitureText" = "Huonekalut";
 "menuListingsText" = "Listaukset";
-"settingsLang" = "English 🇬🇧";
 "listingsClientName" = "Asiakkaan nimi: ";
 "listingsClientAddress" = "Asiakkaan osoite: ";
 "listingsAddBtn" = "Lisää";

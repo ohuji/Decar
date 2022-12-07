@@ -6,10 +6,9 @@
   
 */
 "menuMapText" = "Map";
-"menuSettingsText" = "Settings";
+"menuInstructionsText" = "Instructions";
 "menuFurnitureText" = "Furniture Menu";
 "menuListingsText" = "Listings";
-"settingsLang" = "Finnish 🇫🇮";
 "listingsClientName" = "Client name: ";
 "listingsClientAddress" = "Client address: ";
 "listingsAddBtn" = "Add";

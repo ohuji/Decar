@@ -8,7 +8,7 @@
 import SwiftUI
 
 let menuMapText:LocalizedStringKey = "menuMapText"
-let menuSettingsText:LocalizedStringKey = "menuSettingsText"
+let menuInstructionsText:LocalizedStringKey = "menuInstructionsText"
 let menuFurnitureText:LocalizedStringKey = "menuFurnitureText"
 let menuListingsText:LocalizedStringKey = "menuListingsText"
 
@@ -34,11 +34,11 @@ struct Menu: View {
             .padding(.top, 30)
             HStack {
 
-                NavigationLink(destination: Settings()) {
-                    Image(systemName: "gear")
+                NavigationLink(destination: Instructions()) {
+                    Image(systemName: "questionmark.circle")
                         .foregroundColor(Color(red: 255/255, green: 186/255, blue: 0/255))
                         .imageScale(.large)
-                    Text(menuSettingsText)
+                    Text(menuInstructionsText)
                         .foregroundColor(.white)
                         .font(.headline)
                 }
