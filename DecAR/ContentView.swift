@@ -69,7 +69,7 @@ struct ContentView : View {
                 .gesture(drag)
                 .toolbar {
                     ToolbarItemGroup(placement: .navigationBarLeading) {
-                        if !self.showFurMenu {
+                        if !(self.showFurMenu || self.showInstructions) {
                             Button(action: {
                                 if !self.showMenu {
                                     withAnimation{
@@ -92,7 +92,7 @@ struct ContentView : View {
                     }
 
                     ToolbarItemGroup(placement: .navigationBarTrailing){
-                        if !self.showFurMenu {
+                        if !(self.showFurMenu || self.showMenu) {
                             Button(action: {
                                 if !self.showInstructions {
                                     withAnimation{
@@ -115,7 +115,7 @@ struct ContentView : View {
                     }
                     
                     ToolbarItemGroup(placement: .bottomBar) {
-                        if !(self.showFurMenu || self.showMenu) {
+                        if !(self.showFurMenu || self.showMenu || self.showInstructions) {
                             Button(action: {
                                 showingDetail = true
                             }) {
