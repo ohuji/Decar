@@ -14,6 +14,10 @@ let menuListingsText:LocalizedStringKey = "menuListingsText"
 
 
 struct Menu: View {
+    @State private var showingAlert = false
+    @State private var author = "No author :("
+    @State private var quoteValue = "No Quote :("
+    
     var body: some View {
         VStack(alignment: .leading) {
             Image("decar_logo_1")
@@ -66,7 +70,29 @@ struct Menu: View {
                 }
             }
             .padding(.top, 30)
+            HStack {
+                Image(systemName: "quote.bubble")
+                    .foregroundColor(Color(red: 255/255, green: 186/255, blue: 0/255))
+                    .imageScale(.large)
+                Button("Breaking Bad") {
+                    self.showingAlert = true
+                }
+                .foregroundColor(.white)
+                .alert(isPresented: $showingAlert) {
+                    return Alert(title: Text(self.quoteValue).foregroundColor(.white), message: Text("- \(self.author)"), dismissButton: .default(Text("Got it!")))
+                }
+            }
+            .padding(.top, 30)
             Spacer()
+        }
+        .onAppear {
+            getQuote(quoteCompletionHandler: { quote, error in
+                if let quote = quote {
+                    self.author = quote.author
+                    self.quoteValue = quote.quote
+                }
+                
+            })
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -74,6 +100,7 @@ struct Menu: View {
         .listStyle(.sidebar)
         .edgesIgnoringSafeArea(.all)
     }
+    
 }
 
 struct MenuView_Previews: PreviewProvider {
