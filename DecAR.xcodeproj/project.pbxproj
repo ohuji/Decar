@@ -78,6 +78,7 @@
 		6AB203122937DD20005A3954 /* wooden_nightstand.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB203072937DD1C005A3954 /* wooden_nightstand.usdz */; };
 		6AB203132937DD20005A3954 /* old_painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB203082937DD1D005A3954 /* old_painting.usdz */; };
 		6AB203142937DD20005A3954 /* sculpture.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB203092937DD20005A3954 /* sculpture.usdz */; };
+		6AD81C462940F11F00CE32D4 /* BreakingBadQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD81C452940F11F00CE32D4 /* BreakingBadQuote.swift */; };
 		6AE38A79292CC2A900F96075 /* FurnitureMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE38A78292CC2A900F96075 /* FurnitureMenu.swift */; };
 /* End PBXBuildFile section */
 
@@ -174,6 +175,7 @@
 		6AB203072937DD1C005A3954 /* wooden_nightstand.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = wooden_nightstand.usdz; sourceTree = "<group>"; };
 		6AB203082937DD1D005A3954 /* old_painting.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = old_painting.usdz; sourceTree = "<group>"; };
 		6AB203092937DD20005A3954 /* sculpture.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = sculpture.usdz; sourceTree = "<group>"; };
+		6AD81C452940F11F00CE32D4 /* BreakingBadQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadQuote.swift; sourceTree = "<group>"; };
 		6AE38A78292CC2A900F96075 /* FurnitureMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FurnitureMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,6 +248,7 @@
 		6A4397AD292516810000D1B7 /* DecAR */ = {
 			isa = PBXGroup;
 			children = (
+				6AD81C442940EEC800CE32D4 /* Network */,
 				6A279DF7292E86CA000EA69D /* CoreData */,
 				6A279DF4292BD878000EA69D /* DecAR.xcdatamodeld */,
 				6A279DF2292BD867000EA69D /* Persistence.swift */,
@@ -343,6 +346,14 @@
 				6A63C7D9292541EB009BE389 /* chair_swan.usdz */,
 			);
 			path = 3dModels;
+			sourceTree = "<group>";
+		};
+		6AD81C442940EEC800CE32D4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6AD81C452940F11F00CE32D4 /* BreakingBadQuote.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		6ADBC67829296C020031AF85 /* Models */ = {
@@ -542,6 +553,7 @@
 				6A279DFF292FC417000EA69D /* Furniture+CoreData.swift in Sources */,
 				6A83F3AB293D248E00D1047E /* Map.swift in Sources */,
 				6A4397B1292516810000D1B7 /* ContentView.swift in Sources */,
+				6AD81C462940F11F00CE32D4 /* BreakingBadQuote.swift in Sources */,
 				6A279DF1292BD840000EA69D /* Listings.swift in Sources */,
 				6AA58C42292E530B00304FD9 /* Instructions.swift in Sources */,
 				6A279DEF292BD824000EA69D /* Listing+CoreData.swift in Sources */,
@@ -725,7 +737,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DecAR/Preview Content\"";
-				DEVELOPMENT_TEAM = 52C5PE8N74;
+				DEVELOPMENT_TEAM = X9NZQ456C9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -741,7 +753,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = a.Metropolia.DecAR.1;
+				PRODUCT_BUNDLE_IDENTIFIER = a.Metropolia.DecAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -757,7 +769,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DecAR/Preview Content\"";
-				DEVELOPMENT_TEAM = 52C5PE8N74;
+				DEVELOPMENT_TEAM = X9NZQ456C9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -773,7 +785,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = a.Metropolia.DecAR.1;
+				PRODUCT_BUNDLE_IDENTIFIER = a.Metropolia.DecAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
