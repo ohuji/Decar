@@ -5,21 +5,34 @@
   Created by iosdev on 25.11.2022.
   
 */
-"menuMapText" = "Kartta";
-"menuInstructionsText" = "Käyttöohjeet";
-"menuFurnitureText" = "Huonekalut";
-"menuListingsText" = "Listaukset";
-"listingsClientName" = "Asiakkaan nimi: ";
-"listingsClientAddress" = "Asiakkaan osoite: ";
-"listingsAddBtn" = "Lisää";
-"listingsAlertAddListing" = "Lisää listaus";
-"listingsClientName2" = "Asiakkaan nimi";
-"listingsClientAddress2" = "Asiakkaan osoite";
-"listingsBtnCancel" = "Peruuta";
-"listingsDetails" = "Syötä listauksen tiedot.";
-"listingsSelectItem" = "Valitse kohde";
-"furnitureName" = "Huonekalun nimi: ";
-"furnitureAlertAddFurniture" = "Lisää huonekalu";
-"furnitureFurnitureName" = "Huonekalun nimi";
-"furnitureEnterFurnitureDetails" = "Lisää huonekalun tiedot";
-"furnitureSelectItem" = "Valitse kohde";
+"MENU_MAP_TEXT" = "Kartta";
+"MENU_INSTRUCTIONS_TEXT" = "Käyttöohjeet";
+"MENU_FURNITURE_TEXT" = "Huonekalut";
+"MENU_LISTINGS_TEXT" = "Listaukset";
+
+"LISTINGS_CLIENT_NAME" = "Asiakkaan nimi: ";
+"LISTINGS_CLIENT_ADDRESS" = "Asiakkaan osoite: ";
+"LISTINGS_ADD_BTN" = "Lisää";
+"LISTINGS_ALERT_ADD_LISTING" = "Lisää listaus";
+"LISTINGS_CLIENT_NAME_2" = "Asiakkaan nimi";
+"LISTINGS_CLIENT_ADDRESS_2" = "Asiakkaan osoite";
+"LISTINGS_CANCEL_BTN" = "Peruuta";
+"LISTINGS_DETAILS" = "Syötä listauksen tiedot.";
+"LISTINGS_SELECT_ITEM" = "Valitse kohde";
+
+"FURNITURE_NAME" = "Huonekalun nimi: ";
+"FURNITURE_ALERT_ADD_FURNITURE" = "Lisää huonekalu";
+"FURNITURE_FURNITURE_NAME" = "Huonekalun nimi";
+"FURNITURE_ENTER_FURNITURE_DETAILS" = "Lisää huonekalun tiedot";
+"FURNITURE_SELECT_ITEM" = "Valitse kohde";
+
+"INSTRUCTIONS_ADD_TITLE" = "Lisää huonekalu";
+"INSTRUCTIONS_ADD_DESC" = "Lisää huonekalu painamalla näyttöä";
+"INSTRUCTIONS_REMOVE_TITLE" = "Poista huonekalu";
+"INSTRUCTIONS_REMOVE_DESC" = "Poista huonekalu painamalla huonekalua pitkään";
+"INSTRUCTIONS_MOVE_TITLE" = "Liikuta huonekalua";
+"INSTRUCTIONS_MOVE_DESC" = "Liikuta huonekalua koskemalla huonekaluun ja liikuta sormea";
+"INSTRUCTIONS_SAVE_TITLE" = "Tallenna kokemus";
+"INSTRUCTIONS_SAVE_DESC" = "Tallenna kokemus koskemalla kahdella sormella ruutua ja pyöritä niitä kellon suuntaisesti";
+"INSTRUCTIONS_LOAD_TITLE" = "Lataa kokemus";
+"INSTRUCTIONS_LOAD_DESC" = "Lataa kokemus painamalla pitkään ruutua kahdella sormella";

@@ -9,17 +9,13 @@ import Foundation
 import SwiftUI
 import CoreData
 
-let furnitureNameLoc = NSLocalizedString("furnitureName", comment: "furnitureName")
-let furnitureAlertAddFurniture = NSLocalizedString("furnitureAlertAddFurniture", comment: "furnitureAlertAddFurniture")
-let furnitureFurnitureName = NSLocalizedString("furnitureFurnitureName", comment: "furnitureFurnitureName")
-let furnitureEnterFurnitureDetails = NSLocalizedString("furnitureEnterFurnitureDetails", comment: "furnitureEnterFurnitureDetails")
-let furnitureSelectItem = NSLocalizedString("furnitureSelectItem", comment: "furnitureSelectItem")
-let furnitureAddBtn = NSLocalizedString("listingsAddBtn", comment: "listingsAddBtn")
-let furnitureCancelBtn = NSLocalizedString("listingsBtnCancel", comment: "listingsAddBtn")
-
-
-
-
+let furnitureNameLoc = NSLocalizedString("FURNITURE_NAME", comment: "furnitureName")
+let furnitureAlertAddFurniture = NSLocalizedString("FURNITURE_ALERT_ADD_FURNITURE", comment: "furnitureAlertAddFurniture")
+let furnitureFurnitureName = NSLocalizedString("FURNITURE_FURNITURE_NAME", comment: "furnitureFurnitureName")
+let furnitureEnterFurnitureDetails = NSLocalizedString("FURNITURE_ENTER_FURNITURE_DETAILS", comment: "furnitureEnterFurnitureDetails")
+let furnitureSelectItem = NSLocalizedString("FURNITURE_SELECT_ITEM", comment: "furnitureSelectItem")
+let furnitureAddBtn = NSLocalizedString("LISTINGS_ADD_BTN", comment: "listingsAddBtn")
+let furnitureCancelBtn = NSLocalizedString("LISTINGS_CANCEL_BTN", comment: "listingsAddBtn")
 
 struct FurnitureCollectionView: View {
     @State private var presentAlert = false

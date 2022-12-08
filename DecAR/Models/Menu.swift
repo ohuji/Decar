@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-let menuMapText:LocalizedStringKey = "menuMapText"
-let menuInstructionsText:LocalizedStringKey = "menuInstructionsText"
-let menuFurnitureText:LocalizedStringKey = "menuFurnitureText"
-let menuListingsText:LocalizedStringKey = "menuListingsText"
-
+let menuMapText:LocalizedStringKey = "MENU_MAP_TEXT"
+let menuInstructionsText:LocalizedStringKey = "MENU_INSTRUCTIONS_TEXT"
+let menuFurnitureText:LocalizedStringKey = "MENU_FURNITURE_TEXT"
+let menuListingsText:LocalizedStringKey = "MENU_LISTINGS_TEXT"
 
 struct Menu: View {
     @State private var showingAlert = false

@@ -9,15 +9,15 @@ import Foundation
 import SwiftUI
 import CoreData
 
-let listingsClientName = NSLocalizedString("listingsClientName", comment: "listingsClientName")
-let listingsClientAddress = NSLocalizedString("listingsClientAddress", comment: "listingsClientAddress")
-let listingsAddBtn = NSLocalizedString("listingsAddBtn", comment: "listingsAddBtn")
-let listingsAlertAddListing = NSLocalizedString("listingsAlertAddListing", comment: "listingsAlertAddListing")
-let listingsClientName2 = NSLocalizedString("listingsClientName2", comment: "listingsClientName2")
-let listingsClientAddress2 = NSLocalizedString("listingsClientAddress2", comment: "listingsClientAddress2")
-let listingsBtnCancel = NSLocalizedString("listingsBtnCancel", comment: "listingsBtnCancel")
-let listingsDetails = NSLocalizedString("listingsDetails", comment: "listingsDetails")
-let listingsSelectItem = NSLocalizedString("listingsSelectItem", comment: "listingsSelectItem")
+let listingsClientName = NSLocalizedString("LISTINGS_CLIENT_NAME", comment: "listingsClientName")
+let listingsClientAddress = NSLocalizedString("LISTINGS_CLIENT_ADDRESS", comment: "listingsClientAddress")
+let listingsAddBtn = NSLocalizedString("LISTINGS_ADD_BTN", comment: "listingsAddBtn")
+let listingsAlertAddListing = NSLocalizedString("LISTINGS_ALERT_ADD_LISTING", comment: "listingsAlertAddListing")
+let listingsClientName2 = NSLocalizedString("LISTINGS_CLIENT_NAME_2", comment: "listingsClientName2")
+let listingsClientAddress2 = NSLocalizedString("LISTINGS_CLIENT_ADDRESS_2", comment: "listingsClientAddress2")
+let listingsBtnCancel = NSLocalizedString("LISTINGS_CANCEL_BTN", comment: "listingsBtnCancel")
+let listingsDetails = NSLocalizedString("LISTINGS_DETAILS", comment: "listingsDetails")
+let listingsSelectItem = NSLocalizedString("LISTINGS_SELECT_ITEM", comment: "listingsSelectItem")
 
 struct ListingsView: View {
     @State private var presentAlert = false

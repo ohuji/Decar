@@ -5,21 +5,34 @@
   Created by iosdev on 25.11.2022.
   
 */
-"menuMapText" = "Map";
-"menuInstructionsText" = "Instructions";
-"menuFurnitureText" = "Furniture Menu";
-"menuListingsText" = "Listings";
-"listingsClientName" = "Client name: ";
-"listingsClientAddress" = "Client address: ";
-"listingsAddBtn" = "Add";
-"listingsAlertAddListing" = "Add listing";
-"listingsClientName2" = "Client name";
-"listingsClientAddress2" = "Client address";
-"listingsBtnCancel" = "Cancel";
-"listingsDetails" = "Enter listing details.";
-"listingsSelectItem" = "Select an item";
-"furnitureName" = "Furniture name: ";
-"furnitureAlertAddFurniture" = "Add furniture";
-"furnitureFurnitureName" = "Furniture name";
-"furnitureEnterFurnitureDetails" = "Enter furniture details.";
-"furnitureSelectItem" = "Select an item";
+"MENU_MAP_TEXT" = "Map";
+"MENU_INSTRUCTIONS_TEXT" = "Instructions";
+"MENU_FURNITURE_TEXT" = "Furniture Menu";
+"MENU_LISTINGS_TEXT" = "Listings";
+
+"LISTINGS_CLIENT_NAME" = "Client name: ";
+"LISTINGS_CLIENT_ADDRESS" = "Client address: ";
+"LISTINGS_ADD_BTN" = "Add";
+"LISTINGS_ALERT_ADD_LISTING" = "Add listing";
+"LISTINGS_CLIENT_NAME_2" = "Client name";
+"LISTINGS_CLIENT_ADDRESS_2" = "Client address";
+"LISTINGS_CANCEL_BTN" = "Cancel";
+"LISTINGS_DETAILS" = "Enter listing details.";
+"LISTINGS_SELECT_ITEM" = "Select an item";
+
+"FURNITURE_NAME" = "Furniture name: ";
+"FURNITURE_ALERT_ADD_FURNITURE" = "Add furniture";
+"FURNITURE_FURNITURE_NAME" = "Furniture name";
+"FURNITURE_ENTER_FURNITURE_DETAILS" = "Enter furniture details.";
+"FURNITURE_SELECT_ITEM" = "Select an item";
+
+"INSTRUCTIONS_ADD_TITLE" = "Add furniture";
+"INSTRUCTIONS_ADD_DESC" = "Add furniture by tapping the screen";
+"INSTRUCTIONS_REMOVE_TITLE" = "Remove furniture";
+"INSTRUCTIONS_REMOVE_DESC" = "Remove furniture by long pressing furniture object";
+"INSTRUCTIONS_MOVE_TITLE" = "Move furniture";
+"INSTRUCTIONS_MOVE_DESC" = "Move furniture by touching the object and moving it with your finger";
+"INSTRUCTIONS_SAVE_TITLE" = "Save experince";
+"INSTRUCTIONS_SAVE_DESC" = "Save current experience by touching the screen with two fingers and rotating them clock wise in a circular motion";
+"INSTRUCTIONS_LOAD_TITLE" = "Load experience";
+"INSTRUCTIONS_LOAD_DESC" = "Load the last saved experience by long pressing the screen with two fingers";
