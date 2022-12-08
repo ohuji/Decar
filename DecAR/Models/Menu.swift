@@ -27,7 +27,7 @@ struct Menu: View {
 
                 NavigationLink(destination: MapView()) {
                     Image(systemName: "map")
-                        .foregroundColor(Color(red: 255/255, green: 186/255, blue: 0/255))
+                        .foregroundColor(Color.accentColor)
                         .imageScale(.large)
                     Text(menuMapText)
                             .foregroundColor(.white)
@@ -39,7 +39,7 @@ struct Menu: View {
 
                 NavigationLink(destination: Instructions()) {
                     Image(systemName: "questionmark.circle")
-                        .foregroundColor(Color(red: 255/255, green: 186/255, blue: 0/255))
+                        .foregroundColor(Color.accentColor)
                         .imageScale(.large)
                     Text(menuInstructionsText)
                         .foregroundColor(.white)
@@ -50,7 +50,7 @@ struct Menu: View {
             HStack {
                 NavigationLink(destination: FurnitureCollectionView()) {
                     Image(systemName: "bed.double")
-                        .foregroundColor(Color(red: 255/255, green: 186/255, blue: 0/255))
+                        .foregroundColor(Color.accentColor)
                         .imageScale(.large)
                     Text(menuFurnitureText)
                         .foregroundColor(.white)
@@ -61,7 +61,7 @@ struct Menu: View {
             HStack {
                 NavigationLink(destination: ListingsView()) {
                     Image(systemName: "house")
-                        .foregroundColor(Color(red: 255/255, green: 186/255, blue: 0/255))
+                        .foregroundColor(Color.accentColor)
                         .imageScale(.large)
                     Text(menuListingsText)
                         .foregroundColor(.white)
@@ -71,7 +71,7 @@ struct Menu: View {
             .padding(.top, 30)
             HStack {
                 Image(systemName: "quote.bubble")
-                    .foregroundColor(Color(red: 255/255, green: 186/255, blue: 0/255))
+                    .foregroundColor(Color.accentColor)
                     .imageScale(.large)
                 Button("Breaking Bad") {
                     self.showingAlert = true
@@ -95,7 +95,7 @@ struct Menu: View {
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(red: 12/255, green: 59/255, blue: 46/255))
+        .background(Color("PrimaryColor"))
         .listStyle(.sidebar)
         .edgesIgnoringSafeArea(.all)
     }

@@ -89,13 +89,13 @@ struct FurnitureMenu: View {
                                 })
                             }
                         }
-                        .listRowBackground(Color(red: 109/255, green: 151/255, blue: 115/255))
+                        .listRowBackground(Color("SecondaryColor"))
                     }
                 }
             }
             .clearListBackground()
         }
-        .background(Color(red: 12/255, green: 59/255, blue: 46/255))
+        .background(Color("PrimaryColor"))
         .listStyle(.sidebar)
         .edgesIgnoringSafeArea(.all)
     }

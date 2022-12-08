@@ -22,7 +22,7 @@ struct Instructions: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(menuInstructionsText)
-                .foregroundColor(Color(red: 187/255, green: 138/255, blue: 82/255))
+                .foregroundColor(Color("DetailColor"))
                 .bold()
                 .font(.system(size: 23))
                 .padding(.top, 37)
@@ -78,7 +78,7 @@ struct Instructions: View {
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(red: 12/255, green: 59/255, blue: 46/255))
+        .background(Color("PrimaryColor"))
         .listStyle(.sidebar)
         .edgesIgnoringSafeArea(.all)
     }

@@ -84,7 +84,7 @@ struct ContentView : View {
                                 Image(systemName: "line.horizontal.3")
                                 .resizable()
                                 .scaledToFit()
-                                .foregroundColor(Color(red: 187/255, green: 138/255, blue: 82/255))
+                                .foregroundColor(Color("DetailColor"))
                                 .frame(width: 32, height: 32)
                             }
                         }
@@ -107,7 +107,7 @@ struct ContentView : View {
                                 Image(systemName: "questionmark.circle")
                                 .resizable()
                                 .scaledToFit()
-                                .foregroundColor(Color(red: 187/255, green: 138/255, blue: 82/255))
+                                .foregroundColor(Color("DetailColor"))
                                 .frame(width: 32, height: 32)
                             }
                         }
@@ -122,7 +122,7 @@ struct ContentView : View {
                                 Image(systemName: "plus.circle.fill")
                                 .resizable()
                                 .scaledToFit()
-                                .foregroundColor(Color(red: 187/255, green: 138/255, blue: 82/255))
+                                .foregroundColor(Color("DetailColor"))
                                 .frame(width: 58, height: 58)
                                 .padding(.bottom, 25)
                                 .sheet(isPresented: $showingDetail) {
