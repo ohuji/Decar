@@ -30,6 +30,11 @@ struct ListingsView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Listing.clientName!, ascending: true)],
         animation: .default)
     private var listings: FetchedResults<Listing>
+    
+    init() {
+        UINavigationBar.appearance().backgroundColor = UIColor(named: "PrimaryColor")
+        UITableView.appearance().backgroundColor = UIColor(named: "PrimaryColor")
+    }
 
     var body: some View {
         NavigationView {
@@ -43,6 +48,7 @@ struct ListingsView: View {
                     }
                 }
                 .onDelete(perform: deleteItems)
+                .listRowBackground(Color("SecondaryColor"))
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

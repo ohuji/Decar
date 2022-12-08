@@ -21,6 +21,12 @@ struct Menu: View {
     @State private var author = "No author :("
     @State private var quoteValue = "No Quote :("
     
+    init() {
+        UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).backgroundColor = UIColor(named: "SecondaryColor")
+        
+        UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = UIColor.black
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             Image("decar_logo_1")
@@ -82,7 +88,7 @@ struct Menu: View {
                 }
                 .foregroundColor(.white)
                 .alert(isPresented: $showingAlert) {
-                    return Alert(title: Text(self.quoteValue).foregroundColor(.white), message: Text("- \(self.author)"), dismissButton: .default(Text("Got it!")))
+                    return Alert(title: Text(self.quoteValue).foregroundColor(.white), message: Text("- \(self.author)"), dismissButton: .default(Text("Alright!")))
                 }
             }
             .padding(.top, 30)

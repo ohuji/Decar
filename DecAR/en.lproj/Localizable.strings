@@ -5,11 +5,18 @@
   Created by iosdev on 25.11.2022.
   
 */
+
+/*
+  English Language localization
+*/
+
+//Menu localization
 "MENU_MAP_TEXT" = "Map";
 "MENU_INSTRUCTIONS_TEXT" = "Instructions";
 "MENU_FURNITURE_TEXT" = "Furniture Menu";
 "MENU_LISTINGS_TEXT" = "Listings";
 
+//Listings view localization
 "LISTINGS_CLIENT_NAME" = "Client name: ";
 "LISTINGS_CLIENT_ADDRESS" = "Client address: ";
 "LISTINGS_ADD_BTN" = "Add";
@@ -20,12 +27,18 @@
 "LISTINGS_DETAILS" = "Enter listing details.";
 "LISTINGS_SELECT_ITEM" = "Select an item";
 
+//Furniture collection view localization
 "FURNITURE_NAME" = "Furniture name: ";
 "FURNITURE_ALERT_ADD_FURNITURE" = "Add furniture";
 "FURNITURE_FURNITURE_NAME" = "Furniture name";
 "FURNITURE_ENTER_FURNITURE_DETAILS" = "Enter furniture details.";
 "FURNITURE_SELECT_ITEM" = "Select an item";
+"FURNITURE_3D_MODEL" = "3D model";
+"FURNITURE_3D_MODEL_NAME" = "3D model name";
+"FURNITURE_CATEGORY" = "Category";
+"FURNITURE_FURNITURE_CATEGORY" = "Furniture category";
 
+//Instructions view localization
 "INSTRUCTIONS_ADD_TITLE" = "Add furniture";
 "INSTRUCTIONS_ADD_DESC" = "Add furniture by tapping the screen";
 "INSTRUCTIONS_REMOVE_TITLE" = "Remove furniture";

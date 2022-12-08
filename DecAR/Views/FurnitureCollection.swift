@@ -16,6 +16,10 @@ let furnitureEnterFurnitureDetails = NSLocalizedString("FURNITURE_ENTER_FURNITUR
 let furnitureSelectItem = NSLocalizedString("FURNITURE_SELECT_ITEM", comment: "furnitureSelectItem")
 let furnitureAddBtn = NSLocalizedString("LISTINGS_ADD_BTN", comment: "listingsAddBtn")
 let furnitureCancelBtn = NSLocalizedString("LISTINGS_CANCEL_BTN", comment: "listingsAddBtn")
+let furniture3dModel = NSLocalizedString("FURNITURE_3D_MODEL", comment: "furniture3dModel")
+let furnitureCategory = NSLocalizedString("FURNITURE_CATEGORY", comment: "furnitureCategory")
+let furnitureFurnitureCategory = NSLocalizedString("FURNITURE_FURNITURE_CATEGORY", comment: "furnitureFurnitureCategory")
+let furniture3dModelName = NSLocalizedString("FURNITURE_3D_MODEL_NAME", comment: "furniture3dModelName")
 
 struct FurnitureCollectionView: View {
     @State private var presentAlert = false
@@ -29,6 +33,11 @@ struct FurnitureCollectionView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Furniture.furnitureName , ascending: true)],
         animation: .default)
     private var furnitures: FetchedResults<Furniture>
+    
+    init() {
+        UINavigationBar.appearance().backgroundColor = UIColor(named: "PrimaryColor")
+        UITableView.appearance().backgroundColor = UIColor(named: "PrimaryColor")
+    }
 
     var body: some View {
         NavigationView {
@@ -36,13 +45,14 @@ struct FurnitureCollectionView: View {
                 ForEach(furnitures) { furniture in
                     NavigationLink {
                         Text("\(furnitureNameLoc) \(furniture.furnitureName!)")
-                        Text("3D model: \(furniture.modelName!)")
-                        Text("Category: \(furniture.category!)")
+                        Text("\(furniture3dModel): \(furniture.modelName!)")
+                        Text("\(furnitureCategory): \(furniture.category!)")
                     } label: {
                         Text(furniture.furnitureName!)
                     }
                 }
                 .onDelete(perform: deleteItems)
+                .listRowBackground(Color("SecondaryColor"))
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -55,8 +65,8 @@ struct FurnitureCollectionView: View {
                         .popover(isPresented: self.$presentAlert, arrowEdge: .bottom) {
                         Text(furnitureAlertAddFurniture)
                         TextField(furnitureFurnitureName, text: $furnitureName)
-                        TextField("Furniture category", text: $category)
-                        TextField("3D model name", text: $modelName)
+                        TextField(furnitureFurnitureCategory, text: $category)
+                        TextField(furniture3dModelName, text: $modelName)
 
                         Button(furnitureAddBtn, action: {
                             let newFurniture = Furniture(context: viewContext)

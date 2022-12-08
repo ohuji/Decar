@@ -5,11 +5,18 @@
   Created by iosdev on 25.11.2022.
   
 */
+
+/*
+  Finnish Language localization
+*/
+
+//Menu localization
 "MENU_MAP_TEXT" = "Kartta";
 "MENU_INSTRUCTIONS_TEXT" = "Käyttöohjeet";
 "MENU_FURNITURE_TEXT" = "Huonekalut";
 "MENU_LISTINGS_TEXT" = "Listaukset";
 
+//Listings view localization
 "LISTINGS_CLIENT_NAME" = "Asiakkaan nimi: ";
 "LISTINGS_CLIENT_ADDRESS" = "Asiakkaan osoite: ";
 "LISTINGS_ADD_BTN" = "Lisää";
@@ -20,12 +27,18 @@
 "LISTINGS_DETAILS" = "Syötä listauksen tiedot.";
 "LISTINGS_SELECT_ITEM" = "Valitse kohde";
 
+//Furniture collection view localization
 "FURNITURE_NAME" = "Huonekalun nimi: ";
 "FURNITURE_ALERT_ADD_FURNITURE" = "Lisää huonekalu";
 "FURNITURE_FURNITURE_NAME" = "Huonekalun nimi";
 "FURNITURE_ENTER_FURNITURE_DETAILS" = "Lisää huonekalun tiedot";
 "FURNITURE_SELECT_ITEM" = "Valitse kohde";
+"FURNITURE_3D_MODEL" = "3D malli";
+"FURNITURE_3D_MODEL_NAME" = "3D mallin nimi";
+"FURNITURE_CATEGORY" = "Kategoria";
+"FURNITURE_FURNITURE_CATEGORY" = "Huonekalun kategoria";
 
+//Instructions view localization
 "INSTRUCTIONS_ADD_TITLE" = "Lisää huonekalu";
 "INSTRUCTIONS_ADD_DESC" = "Lisää huonekalu painamalla näyttöä";
 "INSTRUCTIONS_REMOVE_TITLE" = "Poista huonekalu";
