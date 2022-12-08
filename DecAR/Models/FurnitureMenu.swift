@@ -17,6 +17,27 @@ class SelectedFurniture: Codable {
     
 }
 
+struct Category: Identifiable {
+    let id = UUID()
+    let categoryName: String
+}
+
+struct ClearListBackgroundModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        if #available(iOS 16.0, *) {
+            content.scrollContentBackground(.hidden)
+        } else {
+            content
+        }
+    }
+}
+
+extension View {
+    func clearListBackground() -> some View {
+        modifier(ClearListBackgroundModifier())
+    }
+}
+
 struct FurnitureMenu: View {
     
     @Environment(\.managedObjectContext) private var viewContext
@@ -26,11 +47,20 @@ struct FurnitureMenu: View {
     @State private var currentId = 0
     @State var currentObject: SelectedFurniture = SelectedFurniture("stool")
     
+    let categorized = [Category(categoryName: "Beds"), Category(categoryName: "Carpets"), Category(categoryName: "Chairs"), Category(categoryName: "Couches"), Category(categoryName: "Desks"), Category(categoryName: "Flowers"), Category(categoryName: "Lamps"), Category(categoryName: "Mirrors"), Category(categoryName: "Paintings"), Category(categoryName: "Pianos"), Category(categoryName: "Plants"), Category(categoryName: "Sculptures"), Category(categoryName: "Sets"), Category(categoryName: "Shelves"), Category(categoryName: "Sofas"), Category(categoryName: "Stands"), Category(categoryName: "Stools"), Category(categoryName: "TV Stand"), Category(categoryName: "Tables"), Category(categoryName: "Tableset"), Category(categoryName: "Televisions"), Category(categoryName: "Vases"), Category(categoryName: "Wardrobes")]
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Furniture.furnitureName , ascending: true)],
         animation: .default)
     private var furnitures: FetchedResults<Furniture>
-        
+    /*
+    init() {
+        if #unavailable(iOS 16.0) {
+            UITableView.appearance().backgroundColor = .clear
+        }
+    }
+     */
+    
     var body: some View {
         VStack(alignment: .leading) {
             Button(action: {
@@ -45,24 +75,27 @@ struct FurnitureMenu: View {
             .padding(.leading, 30)
             .padding(.top, 10)
             List {
-                ForEach(furnitures) { furniture in
-                    Button(furniture.furnitureName!, action: {
-                        currentObject = SelectedFurniture( furniture.modelName!)
-                        
-                        let appFurniture = UserDefaults.standard
-                        appFurniture.set(furniture.modelName, forKey: "AppCurrentObject")
-     
-                         isPresented = false
-                    })
-                    .foregroundColor(.white)
+                ForEach(categorized) { category in
+                    Section(category.categoryName){
+                        ForEach(furnitures) { furniture in
+                            if((category.categoryName)  == String?(furniture.category ?? "Chairs")!) {
+                                Button(furniture.furnitureName!, action: {
+                                    currentObject = SelectedFurniture( furniture.modelName!)
+                                    
+                                    let appFurniture = UserDefaults.standard
+                                    appFurniture.set(furniture.modelName, forKey: "AppCurrentObject")
+                                    
+                                    isPresented = false
+                                })
+                            }
+                        }
+                        .listRowBackground(Color(red: 109/255, green: 151/255, blue: 115/255))
+                    }
                 }
-                .listRowBackground(Color(red: 109/255, green: 151/255, blue: 115/255))
             }
+            .clearListBackground()
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-       // .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color(red: 12/255, green: 59/255, blue: 46/255))
-        //.listStyle(.automatic)
         .listStyle(.sidebar)
         .edgesIgnoringSafeArea(.all)
     }
