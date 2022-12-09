@@ -59,26 +59,60 @@ struct ListingsView: View {
                         presentAlert = true
                     }
                         .popover(isPresented: self.$presentAlert, arrowEdge: .bottom) {
-                            Text(listingsAlertAddListing)
-                            TextField(listingsClientName2, text: $clientName)
-                            TextField(listingsClientAddress2, text: $clientAddress)
-                            Button(listingsAddBtn, action: {
-                                let newListing = Listing(context: viewContext)
-                                newListing.clientName = clientName
-                                newListing.clientAddress = clientAddress
-                                do {
-                                    try viewContext.save()
-                                    self.presentAlert = false
-                                } catch {
-                                    let nsError = error as NSError
-                                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                            VStack() {
+                                Text(listingsAlertAddListing)
+                                    .bold()
+                                    .padding(.bottom, 100)
+                                    .padding(.top, 100)
+                                    .foregroundColor(Color.accentColor)
+                                    .font(.system(size: 40))
+                                Text(listingsClientName2)
+                                    .foregroundColor(Color.accentColor)
+                                    .padding(.leading, 10)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                TextField(listingsClientName2, text: $clientName)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .padding(10)
+                                Text(listingsClientAddress2)
+                                    .foregroundColor(Color.accentColor)
+                                    .padding(.leading, 10)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                TextField(listingsClientAddress2, text: $clientAddress)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .padding(10)
+                                    .padding(.bottom, 50)
+                                
+                                HStack() {
+                                    Button(listingsAddBtn, action: {
+                                        let newListing = Listing(context: viewContext)
+                                        newListing.clientName = clientName
+                                        newListing.clientAddress = clientAddress
+                                        do {
+                                            try viewContext.save()
+                                            self.presentAlert = false
+                                        } catch {
+                                            let nsError = error as NSError
+                                            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                                        }
+                                    })
+                                    .padding(15)
+                                    .background(Color.green)
+                                    .foregroundColor(Color.white)
+                                    .clipShape(Capsule())
+                                    
+                                    Button(listingsBtnCancel, action: {
+                                        self.presentAlert = false
+                                    })
+                                    .padding(15)
+                                    .background(Color.red)
+                                    .foregroundColor(Color.white)
+                                    .clipShape(Capsule())
                                 }
-                            })
-                            Button(listingsBtnCancel, action: {
-                                self.presentAlert = false
-                            })
+                                Spacer()
+                            }
+                            .background(Color("PrimaryColor"))
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         }
-                
                     }
             }
                      

@@ -19,7 +19,7 @@
 //Listings view localization
 "LISTINGS_CLIENT_NAME" = "Client name: ";
 "LISTINGS_CLIENT_ADDRESS" = "Client address: ";
-"LISTINGS_ADD_BTN" = "Add";
+"LISTINGS_ADD_BTN" = " Add   ";
 "LISTINGS_ALERT_ADD_LISTING" = "Add listing";
 "LISTINGS_CLIENT_NAME_2" = "Client name";
 "LISTINGS_CLIENT_ADDRESS_2" = "Client address";

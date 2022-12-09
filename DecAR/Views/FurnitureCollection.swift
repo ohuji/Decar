@@ -63,30 +63,69 @@ struct FurnitureCollectionView: View {
                         presentAlert = true
                     }
                         .popover(isPresented: self.$presentAlert, arrowEdge: .bottom) {
-                        Text(furnitureAlertAddFurniture)
-                        TextField(furnitureFurnitureName, text: $furnitureName)
-                        TextField(furnitureFurnitureCategory, text: $category)
-                        TextField(furniture3dModelName, text: $modelName)
-
-                        Button(furnitureAddBtn, action: {
-                            let newFurniture = Furniture(context: viewContext)
-                            newFurniture.furnitureName = furnitureName
-                            newFurniture.category = category
-                            newFurniture.modelName = modelName
-
-                            do {
-                                try viewContext.save()
-                                self.presentAlert = false
-                            } catch {
-                                let nsError = error as NSError
-                                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                            VStack() {
+                                Text(furnitureAlertAddFurniture)
+                                    .bold()
+                                    .padding(.bottom, 100)
+                                    .padding(.top, 100)
+                                    .foregroundColor(Color.accentColor)
+                                    .font(.system(size: 40))
+                                Text(furnitureFurnitureName)
+                                    .foregroundColor(Color.accentColor)
+                                    .padding(.leading, 10)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                TextField(furnitureFurnitureName, text: $furnitureName)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .padding(10)
+                                Text(furnitureFurnitureCategory)
+                                    .foregroundColor(Color.accentColor)
+                                    .padding(.leading, 10)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                TextField(furnitureFurnitureCategory, text: $category)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .padding(10)
+                                Text(furniture3dModelName)
+                                    .foregroundColor(Color.accentColor)
+                                    .padding(.leading, 10)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                TextField(furniture3dModelName, text: $modelName)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .padding(10)
+                                    .padding(.bottom, 50)
+                                HStack {
+                                    Button(furnitureAddBtn, action: {
+                                        let newFurniture = Furniture(context: viewContext)
+                                        newFurniture.furnitureName = furnitureName
+                                        newFurniture.category = category
+                                        newFurniture.modelName = modelName
+                                        
+                                        do {
+                                            try viewContext.save()
+                                            self.presentAlert = false
+                                        } catch {
+                                            let nsError = error as NSError
+                                            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                                        }
+                                    })
+                                    .padding(15)
+                                    .background(Color.green)
+                                    .foregroundColor(Color.white)
+                                    .clipShape(Capsule())
+                                    
+                                    Button(listingsBtnCancel, action: {
+                                        self.presentAlert = false
+                                    })
+                                    .padding(15)
+                                    .background(Color.red)
+                                    .foregroundColor(Color.white)
+                                    .clipShape(Capsule())
+                                }
+                                Spacer()
                             }
-                        })
-                            Button(listingsBtnCancel, action: {
-                                self.presentAlert = false
-                            })
-                    }
-                    }
+                            .background(Color("PrimaryColor"))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                }
             }
             Text(furnitureSelectItem)
         }
