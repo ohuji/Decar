@@ -44,9 +44,20 @@ struct FurnitureCollectionView: View {
             List {
                 ForEach(furnitures) { furniture in
                     NavigationLink {
-                        Text("\(furnitureNameLoc) \(furniture.furnitureName!)")
-                        Text("\(furniture3dModel): \(furniture.modelName!)")
-                        Text("\(furnitureCategory): \(furniture.category!)")
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("\(furnitureNameLoc) \(furniture.furnitureName!)")
+                                    .foregroundColor(Color.accentColor)
+                                Text("\(furniture3dModel): \(furniture.modelName!)")
+                                    .foregroundColor(Color.accentColor)
+                                Text("\(furnitureCategory): \(furniture.category!)")
+                                    .foregroundColor(Color.accentColor)
+                                Spacer()
+                            }
+                            Spacer()
+                        }
+                        .background(Color("PrimaryColor"))
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                     } label: {
                         Text(furniture.furnitureName!)
                     }

@@ -41,8 +41,18 @@ struct ListingsView: View {
             List {
                 ForEach(listings) { listing in
                     NavigationLink {
-                        Text("\(listingsClientName) \(listing.clientName!)")
-                        Text("\(listingsClientAddress) \(listing.clientAddress!)")
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("\(listingsClientName) \(listing.clientName!)")
+                                    .foregroundColor(Color.accentColor)
+                                Text("\(listingsClientAddress) \(listing.clientAddress!)")
+                                    .foregroundColor(Color.accentColor)
+                                Spacer()
+                            }
+                            Spacer()
+                        }
+                        .background(Color("PrimaryColor"))
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                     } label: {
                         Text(listing.clientName!)
                     }
