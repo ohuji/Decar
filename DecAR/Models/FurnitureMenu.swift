@@ -32,6 +32,14 @@ struct ClearListBackgroundModifier: ViewModifier {
     }
 }
 
+struct ClearCell: ViewModifier {
+      func body(content: Content) -> some View {
+          content
+              .foregroundColor(.black)
+              .listRowBackground(Color.clear)
+      }
+  }
+
 extension View {
     func clearListBackground() -> some View {
         modifier(ClearListBackgroundModifier())
@@ -53,50 +61,51 @@ struct FurnitureMenu: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Furniture.furnitureName , ascending: true)],
         animation: .default)
     private var furnitures: FetchedResults<Furniture>
-    /*
-    init() {
-        if #unavailable(iOS 16.0) {
-            UITableView.appearance().backgroundColor = .clear
-        }
-    }
-     */
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Button(action: {
-                isPresented = false
-            }) {
-                Image(systemName: "arrow.backward")
-                .resizable()
-                .scaledToFit()
-                .foregroundColor(Color(red: 187/255, green: 138/255, blue: 82/255))
-                .frame(width: 32, height: 32)
-            }
-            .padding(.leading, 30)
-            .padding(.top, 10)
-            List {
-                ForEach(categorized) { category in
-                    Section(category.categoryName){
-                        ForEach(furnitures) { furniture in
-                            if((category.categoryName)  == String?(furniture.category ?? "Chairs")!) {
-                                Button(furniture.furnitureName!, action: {
-                                    currentObject = SelectedFurniture( furniture.modelName!)
-                                    
-                                    let appFurniture = UserDefaults.standard
-                                    appFurniture.set(furniture.modelName, forKey: "AppCurrentObject")
-                                    
-                                    isPresented = false
-                                })
-                            }
-                        }
-                        .listRowBackground(Color("SecondaryColor"))
-                    }
+        UITableView.appearance().backgroundColor = .clear
+        UITableViewCell.appearance().backgroundColor = .clear
+        return NavigationView {
+            VStack(alignment: .leading) {
+                Button(action: {
+                    isPresented = false
+                }) {
+                    Image(systemName: "arrow.backward")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(Color(red: 187/255, green: 138/255, blue: 82/255))
+                    .frame(width: 32, height: 32)
                 }
+                .padding(.leading, 30)
+                .padding(.top, 10)
+                    List {
+                        ForEach(categorized) { category in
+                            Section(category.categoryName){
+                                ForEach(furnitures) { furniture in
+                                    if((category.categoryName)  == String?(furniture.category ?? "Chairs")!) {
+                                        Button(furniture.furnitureName!, action: {
+                                            currentObject = SelectedFurniture( furniture.modelName!)
+                                            
+                                            let appFurniture = UserDefaults.standard
+                                            appFurniture.set(furniture.modelName, forKey: "AppCurrentObject")
+                                            
+                                            isPresented = false
+                                        })
+                                        .foregroundColor(.black)
+                                    }
+                                }
+                                .listRowBackground(Color("SecondaryColor"))
+                            }.foregroundColor(Color(red: 187/255, green: 138/255, blue: 82/255))
+                        }
+                    }
+                    .clearListBackground()
             }
-            .clearListBackground()
+            .background(Color("PrimaryColor"))
+            .listStyle(.sidebar)
+            .edgesIgnoringSafeArea(.all)
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
         }
-        .background(Color("PrimaryColor"))
-        .listStyle(.sidebar)
-        .edgesIgnoringSafeArea(.all)
+        
     }
 }
