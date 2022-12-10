@@ -11,19 +11,19 @@ import RealityKit
 import ARKit
 import SceneKit
 
+let circleLabel = NSLocalizedString("CIRLCLE", comment: "circleLabel")
+let menuLabel = NSLocalizedString("MENU", comment: "menuLabel")
 
 struct ContentView : View {
-    @State var showMenu = false
+    //State variables for menus
+    @State private var showMenu = false
     @State private var showFurMenu = false
-    @State var showInstructions = false
-
+    @State private var showInstructions = false
     @State private var showingDetail = false
-
 
     //Coredata
     @Environment(\.managedObjectContext) private var viewContext
     @Binding public var currentObject: SelectedFurniture
-
     
     var body: some View {
         let drag = DragGesture()
@@ -35,37 +35,33 @@ struct ContentView : View {
              }
          }
         
-        
-            return NavigationView {
-                        GeometryReader { geometry in
-                            ZStack(alignment: .leading) {
-                                //Color.purple
-                                ARViewContainer(showMenu: self.$showMenu, showFurMenu: self.$showFurMenu, showInstructions: self.$showInstructions, currentObject: self.$currentObject)
-                                    .disabled(self.showMenu ? true : false)
-                                    .disabled(self.showInstructions ? true : false)
-                                    .disabled(self.showFurMenu ? true : false)
-                                    .edgesIgnoringSafeArea(.all)
+    return NavigationView {
+        GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                ARViewContainer(showMenu: self.$showMenu, showFurMenu: self.$showFurMenu, showInstructions: self.$showInstructions, currentObject: self.$currentObject)
+                    .disabled(self.showMenu ? true : false)
+                    .disabled(self.showInstructions ? true : false)
+                    .disabled(self.showFurMenu ? true : false)
+                    .edgesIgnoringSafeArea(.all)
                                                                 
-                                    if self.showMenu {
-                                        Menu()
-                                            .frame(width: geometry.size.width/2)
-                                            .transition(.move(edge: .leading))
-                                    }
+                    if self.showMenu {
+                        Menu()
+                        .frame(width: geometry.size.width/2)
+                        .transition(.move(edge: .leading))
+                    }
                                                                 
-                                    if !self.showMenu && !self.showInstructions && self.showFurMenu {
-                                        FurnitureMenu(isPresented: .constant(self.showingDetail))
-                                            //showFurMenu: .constant(self.showFurMenu))
-                                            .transition(.move(edge: .bottom))
-                                    }
+                    if !self.showMenu && !self.showInstructions && self.showFurMenu {
+                        FurnitureMenu(isPresented: .constant(self.showingDetail))
+                            .transition(.move(edge: .bottom))
+                    }
                                                             
-                                    if !self.showMenu && !self.showFurMenu && self.showInstructions {
-                                        Instructions()
-                                            .offset(x: geometry.size.width/2)
-                                            .frame(width: geometry.size.width/2)
-                                            .transition(.move(edge: .trailing))
-                                    }
-                                
-                            }
+                    if !self.showMenu && !self.showFurMenu && self.showInstructions {
+                        Instructions()
+                        .offset(x: geometry.size.width/2)
+                        .frame(width: geometry.size.width/2)
+                        .transition(.move(edge: .trailing))
+                    }
+                }
                 .gesture(drag)
                 .toolbar {
                     ToolbarItemGroup(placement: .navigationBarLeading) {
@@ -86,6 +82,7 @@ struct ContentView : View {
                                 .scaledToFit()
                                 .foregroundColor(Color("DetailColor"))
                                 .frame(width: 32, height: 32)
+                                .accessibilityLabel(menuLabel)
                             }
                         }
 
@@ -109,6 +106,7 @@ struct ContentView : View {
                                 .scaledToFit()
                                 .foregroundColor(Color("DetailColor"))
                                 .frame(width: 32, height: 32)
+                                .accessibilityLabel(menuInstructionsText)
                             }
                         }
                         
@@ -128,22 +126,21 @@ struct ContentView : View {
                                 .sheet(isPresented: $showingDetail) {
                                     FurnitureMenu(isPresented: $showingDetail)
                                 }
+                                .accessibilityLabel(circleLabel)
                             }
                         }
-                           
                     }
                 }
-                            
-                } //.toolbarBackground(.hidden, for: .navigationBar)
             }
-            
         }
-        
     }
-    
+}
 
-
+//Adding functions to ARView extension
 extension ARView: ARCoachingOverlayViewDelegate {
+    /*
+     Workaround for holding values inside extension
+     */
     struct Holder {
         static var currentModelName: String = "Stool"
         static var currentObject: SelectedFurniture = SelectedFurniture("stool")
@@ -189,6 +186,10 @@ extension ARView: ARCoachingOverlayViewDelegate {
         return try? Data(contentsOf: mapSaveURL)
     }
     
+    /*
+     Add coaching overlay to ARView, which goal
+     is to help user navigate horizontal plane
+     */
     func addCoaching() {
         let coachingOverlay = ARCoachingOverlayView()
         
@@ -207,8 +208,7 @@ extension ARView: ARCoachingOverlayViewDelegate {
     
     //Setup AR config
     func setupConfiguration() {
-                        
-        //self.automaticallyConfigureSession = true
+        self.automaticallyConfigureSession = true
         
         let config = ARWorldTrackingConfiguration()
         config.planeDetection = [.horizontal, .vertical]
@@ -223,6 +223,11 @@ extension ARView: ARCoachingOverlayViewDelegate {
         self.session.run(config)
     }
     
+    /*
+     Adds long press gesture recognizer to the view, which requires
+     two finger press for 0.4 seconds and then fires loadExperience()
+     function.
+     */
     func enableWorldLoad() {
         let longPressGestRecog = UILongPressGestureRecognizer(target: self, action: #selector(loadExperience(recognizer:)))
         
@@ -234,6 +239,7 @@ extension ARView: ARCoachingOverlayViewDelegate {
         self.addGestureRecognizer(longPressGestRecog)
     }
     
+    //Function for retrieving saved worldMap
     func loadWorldMap(from url: URL) throws -> ARWorldMap {
         let mapData = try Data(contentsOf: url)
         guard let worldMap = try NSKeyedUnarchiver.unarchivedObject(ofClass: ARWorldMap.self, from: mapData)
@@ -295,7 +301,10 @@ extension ARView: ARCoachingOverlayViewDelegate {
         self.session.run(config, options: [.resetTracking, .removeExistingAnchors])
     }
     
-    //add gesture recognizer to enable removal
+    /*
+     Adds long press gesture recognizer, which fires handleLongPress()
+     function.
+     */
     func enableObjectRemoval() {
         let longPressGestRecog = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(recognizer:)))
         
@@ -304,6 +313,8 @@ extension ARView: ARCoachingOverlayViewDelegate {
         self.addGestureRecognizer(longPressGestRecog)
     }
     
+    
+    //Adds tap gesture recognizer, which fires handleTap() function.
     func enableObjectAdd() {
         let tapGestRecog = UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:)))
         self.addGestureRecognizer(tapGestRecog)
@@ -363,8 +374,6 @@ extension ARView: ARCoachingOverlayViewDelegate {
         }
     }
     
-    
-    //Find location and remove anchor from object
     @objc func handleLongPress(recognizer: UILongPressGestureRecognizer) {
         let location = recognizer.location(in: self)
                 
@@ -392,7 +401,6 @@ extension ARView: ARCoachingOverlayViewDelegate {
      Load entity, generate collision shape and
      return it
     */
-    
     func retrieveModel(_ modelName: String) -> ModelEntity {
         let modelEntity = try! ModelEntity.loadModel(named: modelName)
         
@@ -405,7 +413,6 @@ extension ARView: ARCoachingOverlayViewDelegate {
      Place anchor at location, give it
      a name for removal and add model to it
     */
-    
     func placeObject(modelEntity:ModelEntity, at location:SIMD3<Float>) {
         let anchor = AnchorEntity(world: location)
         let secondAnchor = AnchorEntity(world: location)
@@ -446,7 +453,6 @@ struct ARViewContainer: UIViewRepresentable {
         return arView
 
     }
-     
     
     func updateUIView(_ uiView: ARView, context: Context) {
         uiView.currentModelName = uiView.makePeace()

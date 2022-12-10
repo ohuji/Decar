@@ -49,3 +49,7 @@
 "INSTRUCTIONS_SAVE_DESC" = "Tallenna kokemus koskemalla kahdella sormella ruutua ja pyöritä niitä kellon suuntaisesti";
 "INSTRUCTIONS_LOAD_TITLE" = "Lataa kokemus";
 "INSTRUCTIONS_LOAD_DESC" = "Lataa kokemus painamalla pitkään ruutua kahdella sormella";
+
+//ContentView localization
+"CIRCLE" = "ympyrä";
+"MENU" = "valikko";

@@ -49,3 +49,7 @@
 "INSTRUCTIONS_SAVE_DESC" = "Save current experience by touching the screen with two fingers and rotating them clock wise in a circular motion";
 "INSTRUCTIONS_LOAD_TITLE" = "Load experience";
 "INSTRUCTIONS_LOAD_DESC" = "Load the last saved experience by long pressing the screen with two fingers";
+
+//ContentView localization
+"CIRCLE" = "cirle";
+"MENU" = "menu";

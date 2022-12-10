@@ -42,6 +42,7 @@ struct Menu: View {
                     Text(menuMapText)
                             .foregroundColor(.white)
                             .font(.headline)
+                            .accessibilityLabel(menuMapText)
                 }
             }
             .padding(.top, 30)
@@ -54,6 +55,7 @@ struct Menu: View {
                     Text(menuInstructionsText)
                         .foregroundColor(.white)
                         .font(.headline)
+                        .accessibilityLabel(menuInstructionsText)
                 }
             }
             .padding(.top, 30)
@@ -65,6 +67,7 @@ struct Menu: View {
                     Text(menuFurnitureText)
                         .foregroundColor(.white)
                         .font(.headline)
+                        .accessibilityLabel(menuFurnitureText)
                 }
             }
             .padding(.top, 30)
@@ -76,6 +79,7 @@ struct Menu: View {
                     Text(menuListingsText)
                         .foregroundColor(.white)
                         .font(.headline)
+                        .accessibilityLabel(menuListingsText)
                 }
             }
             .padding(.top, 30)
@@ -86,6 +90,7 @@ struct Menu: View {
                 Button("Breaking Bad") {
                     self.showingAlert = true
                 }
+                .accessibilityLabel("Breaking Bad")
                 .foregroundColor(.white)
                 .alert(isPresented: $showingAlert) {
                     return Alert(title: Text(self.quoteValue).foregroundColor(.white), message: Text("- \(self.author)"), dismissButton: .default(Text("Alright!")))
