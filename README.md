@@ -7,6 +7,16 @@ This is a fork of DecAR core software repository: [DecAR-csw](https://github.com
 
 ![Logo](https://github.com/ohuji/Decar-k1/blob/main/DecAR/Assets.xcassets/decar_logo_1.imageset/decar-icon.png)
 
+## Main features
+
+- AR object interaction (Add, Remove, Move & Rotate)
+- AR world persistance (Save & Load worldmap + objects which are currently in it)
+- Voice control
+- Localized in English and Finnish
+- Breaking Bad quote API
+- Map with current location + markers for added listings
+- Furniture collection (Add & Remove furniture)
+- Listings (Add & Remove listings)
 
 ## Run Locally
 
