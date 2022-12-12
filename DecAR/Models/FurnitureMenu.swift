@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//strores selected furniture
 class SelectedFurniture: Codable {
     var modelName: String
     var id = UUID().uuidString
@@ -14,14 +15,15 @@ class SelectedFurniture: Codable {
     init(_ modelName: String) {
         self.modelName = modelName
     }
-    
 }
 
+//to store category
 struct Category: Identifiable {
     let id = UUID()
     let categoryName: String
 }
 
+//ios 16+ version to remove list default background color
 struct ClearListBackgroundModifier: ViewModifier {
     func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {
@@ -32,14 +34,7 @@ struct ClearListBackgroundModifier: ViewModifier {
     }
 }
 
-struct ClearCell: ViewModifier {
-      func body(content: Content) -> some View {
-          content
-              .foregroundColor(.black)
-              .listRowBackground(Color.clear)
-      }
-  }
-
+//creates new modifier to clear list default background color
 extension View {
     func clearListBackground() -> some View {
         modifier(ClearListBackgroundModifier())
@@ -63,8 +58,10 @@ struct FurnitureMenu: View {
     private var furnitures: FetchedResults<Furniture>
     
     var body: some View {
+        //for ios15 and under to clear list default background color
         UITableView.appearance().backgroundColor = .clear
         UITableViewCell.appearance().backgroundColor = .clear
+        
         return NavigationView {
             VStack(alignment: .leading) {
                 Button(action: {
@@ -73,7 +70,7 @@ struct FurnitureMenu: View {
                     Image(systemName: "arrow.backward")
                     .resizable()
                     .scaledToFit()
-                    .foregroundColor(Color(red: 187/255, green: 138/255, blue: 82/255))
+                    .foregroundColor(Color("DetailColor"))
                     .frame(width: 32, height: 32)
                 }
                 .padding(.leading, 30)
@@ -95,7 +92,8 @@ struct FurnitureMenu: View {
                                     }
                                 }
                                 .listRowBackground(Color("SecondaryColor"))
-                            }.foregroundColor(Color(red: 187/255, green: 138/255, blue: 82/255))
+                            }
+                            .foregroundColor(Color("DetailColor"))
                         }
                     }
                     .clearListBackground()
