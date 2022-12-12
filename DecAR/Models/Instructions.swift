@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//Localization variables
 let instructionAddTitle:LocalizedStringKey = "INSTRUCTIONS_ADD_TITLE"
 let instructionAddDesc:LocalizedStringKey = "INSTRUCTIONS_ADD_DESC"
 let instructionRemoveTitle:LocalizedStringKey = "INSTRUCTIONS_REMOVE_TITLE"

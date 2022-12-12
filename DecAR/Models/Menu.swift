@@ -11,16 +11,19 @@ import Foundation
 import CoreLocation
 import Combine
 
+//Localization variables
 let menuMapText:LocalizedStringKey = "MENU_MAP_TEXT"
 let menuInstructionsText:LocalizedStringKey = "MENU_INSTRUCTIONS_TEXT"
 let menuFurnitureText:LocalizedStringKey = "MENU_FURNITURE_TEXT"
 let menuListingsText:LocalizedStringKey = "MENU_LISTINGS_TEXT"
 
 struct Menu: View {
+    //State vars for alert
     @State private var showingAlert = false
     @State private var author = "No author :("
     @State private var quoteValue = "No Quote :("
     
+    //Use init to customize alerts using UIKit
     init() {
         UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).backgroundColor = UIColor(named: "SecondaryColor")
         
@@ -100,6 +103,7 @@ struct Menu: View {
             Spacer()
         }
         .onAppear {
+            //On appear get quote from api and assign values to state vars
             getQuote(quoteCompletionHandler: { quote, error in
                 if let quote = quote {
                     self.author = quote.author

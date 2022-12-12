@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import CoreData
 
+//Localization variables
 let listingsClientName = NSLocalizedString("LISTINGS_CLIENT_NAME", comment: "listingsClientName")
 let listingsClientAddress = NSLocalizedString("LISTINGS_CLIENT_ADDRESS", comment: "listingsClientAddress")
 let listingsAddBtn = NSLocalizedString("LISTINGS_ADD_BTN", comment: "listingsAddBtn")
@@ -26,11 +27,13 @@ struct ListingsView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
 
+    //Get furniture
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Listing.clientName!, ascending: true)],
         animation: .default)
     private var listings: FetchedResults<Listing>
     
+    //Use init to add background colors via UIKit for views
     init() {
         UINavigationBar.appearance().backgroundColor = UIColor(named: "PrimaryColor")
         UITableView.appearance().backgroundColor = UIColor(named: "PrimaryColor")

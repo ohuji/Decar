@@ -12,6 +12,7 @@ struct Quote: Codable {
     let author: String
 }
 
+//Fetch quote from breaking bad api and return it with completionhandler
 func getQuote(quoteCompletionHandler: @escaping (Quote?, Error?) -> Void) {
     guard let apiUrl = URL(string: "https://api.breakingbadquotes.xyz/v1/quotes") else {
         fatalError("Failed to create api URL")

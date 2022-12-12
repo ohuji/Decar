@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import CoreData
 
+//Localization variables
 let furnitureNameLoc = NSLocalizedString("FURNITURE_NAME", comment: "furnitureName")
 let furnitureAlertAddFurniture = NSLocalizedString("FURNITURE_ALERT_ADD_FURNITURE", comment: "furnitureAlertAddFurniture")
 let furnitureFurnitureName = NSLocalizedString("FURNITURE_FURNITURE_NAME", comment: "furnitureFurnitureName")
@@ -29,11 +30,13 @@ struct FurnitureCollectionView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
 
+    //Get furniture
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Furniture.furnitureName , ascending: true)],
         animation: .default)
     private var furnitures: FetchedResults<Furniture>
     
+    //Use init to add background colors via UIKit for views
     init() {
         UINavigationBar.appearance().backgroundColor = UIColor(named: "PrimaryColor")
         UITableView.appearance().backgroundColor = UIColor(named: "PrimaryColor")
