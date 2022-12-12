@@ -11,6 +11,7 @@ import RealityKit
 import ARKit
 import SceneKit
 
+//Localization variables
 let circleLabel = NSLocalizedString("CIRLCLE", comment: "circleLabel")
 let menuLabel = NSLocalizedString("MENU", comment: "menuLabel")
 
@@ -182,6 +183,10 @@ extension ARView: ARCoachingOverlayViewDelegate {
         }
     }
     
+    /*
+     Called opportunistically to verify map data can be loaded
+     from filesystem.
+     */
     var mapDataFromFile: Data? {
         return try? Data(contentsOf: mapSaveURL)
     }
@@ -201,7 +206,7 @@ extension ARView: ARCoachingOverlayViewDelegate {
         self.addSubview(coachingOverlay)
     }
     
-    func makePeace() -> String {
+    func getSavedCurrentObject() -> String {
         let furDetail = UserDefaults.standard.object(forKey: "AppCurrentObject") as? String ?? String()
         return furDetail
     }
@@ -247,6 +252,11 @@ extension ARView: ARCoachingOverlayViewDelegate {
         return worldMap
     }
     
+    /*
+     Called on enableWorldLoad(). Removes current anchors,
+     loads saved worldmap to the view, places saved furniture
+     to their previous location and creates a new config to the view.
+     */
     @objc func loadExperience(recognizer: UILongPressGestureRecognizer) {
         self.scene.anchors.removeAll()
         
@@ -320,6 +330,7 @@ extension ARView: ARCoachingOverlayViewDelegate {
         self.addGestureRecognizer(tapGestRecog)
     }
     
+    //Adds new object to the tap's raycast location
     @objc func handleTap(recognizer: UITapGestureRecognizer) {
         let location = recognizer.location(in: self)
         
@@ -328,9 +339,9 @@ extension ARView: ARCoachingOverlayViewDelegate {
         if let firstResult = results.first {
             let position = simd_make_float3(firstResult.worldTransform.columns.3)
             
-            let asd = SelectedFurniture(currentModelName)
-            self.currentObject = asd
-            self.currentList.append(asd)
+            let object = SelectedFurniture(currentModelName)
+            self.currentObject = object
+            self.currentList.append(object)
             
             let encoder = JSONEncoder()
             let dataFurniture = try? encoder.encode(currentList)
@@ -348,11 +359,13 @@ extension ARView: ARCoachingOverlayViewDelegate {
         }
     }
     
+    //Enables worldmap saving
     func enableWorldPersistance() {
         let rotationGestRecog = UIRotationGestureRecognizer(target: self, action: #selector(saveWorldMap(recognizer:)))
         self.addGestureRecognizer(rotationGestRecog)
     }
         
+    //Saves current worldmap to directory
     @objc func saveWorldMap(recognizer: UIRotationGestureRecognizer) {
         self.session.getCurrentWorldMap { worldMap, error in
             guard let map = worldMap
@@ -374,9 +387,16 @@ extension ARView: ARCoachingOverlayViewDelegate {
         }
     }
     
+    //Called when long press is detected
     @objc func handleLongPress(recognizer: UILongPressGestureRecognizer) {
         let location = recognizer.location(in: self)
                 
+        /*
+         If entity is found at the pressed location, remove the
+         object. Loop list that holds all current objects and remove
+         the one with matching id from list. Add new list to
+         filesystem without the removed object and remove the old one.
+        */
         if let modelEntity = self.entity(at: location) {
             if let anchorEntity = modelEntity.anchor,
                 anchorEntity.name == currentObject.modelName {
@@ -436,7 +456,7 @@ struct ARViewContainer: UIViewRepresentable {
     func makeUIView(context: Context) -> ARView {
         let arView = ARView(frame: .zero)
         
-        arView.currentModelName = arView.makePeace()
+        arView.currentModelName = arView.getSavedCurrentObject()
 
         arView.setupConfiguration()
         
@@ -455,7 +475,7 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
-        uiView.currentModelName = uiView.makePeace()
+        uiView.currentModelName = uiView.getSavedCurrentObject()
     }
     
 }
