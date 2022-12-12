@@ -1,4 +1,6 @@
 # Decar: Next generation AR decorating app
+[![iOS version](https://badgen.net/badge/icon/15.5?icon=apple&label=iOS)](https://support.apple.com/en-us/HT201685)
+[![stars](https://badgen.net/github/stars/ohuji/Decar-k1)]()
 
 Decar is a augmented reality decoration application aimed for individual decorators and decoration companies. Our application works to tackle the problem of manual labour and its costs during the decoration phase, with allowing its users to decorate their listings with virtual objects using augmented reality features.
 
