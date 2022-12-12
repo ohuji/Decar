@@ -41,6 +41,14 @@ To build and run your code, choose Product > Run, or click the Run button in you
 
 **APIs:** [breaking-bad-quotes](https://github.com/shevabam/breaking-bad-quotes)
 
+## Color palette
+
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Primary Color | ![#0c3b2e](https://via.placeholder.com/10/0a192f?text=+) #0c3b2e |
+| Secondary Color | ![#6d9773](https://via.placeholder.com/10/f8f8f8?text=+) #6d9773 |
+| Detail Color | ![#bb8a5c](https://via.placeholder.com/10/00b48a?text=+) #bb8a5c |
+| Accent Color | ![#ffbb00](https://via.placeholder.com/10/00b48a?text=+) #ffbb00 |
 
 ## Authors
 
