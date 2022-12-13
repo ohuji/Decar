@@ -43,7 +43,7 @@ struct DecARCoreDataApp: App {
             redChair.category = "Chairs"
             
             let couch = Furniture(context: furnitureContext)
-            couch.furnitureName = "Brown cuch"
+            couch.furnitureName = "Brown couch"
             couch.modelName = "brown_couch"
             couch.category = "Couches"
             
@@ -51,11 +51,6 @@ struct DecARCoreDataApp: App {
             stool.furnitureName = "Stool"
             stool.modelName = "stool"
             stool.category = "Stools"
-
-            let baseFurniture3 = Furniture(context: furnitureContext)
-            baseFurniture3.furnitureName = "Old painting"
-            baseFurniture3.modelName = "old_painting"
-            baseFurniture3.category = "Paintigs"
 
             let baseFurniture6 = Furniture(context: furnitureContext)
             baseFurniture6.furnitureName = "Gaming desk"
