@@ -29,7 +29,6 @@
 		6AA58C42292E530B00304FD9 /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA58C41292E530B00304FD9 /* Instructions.swift */; };
 		6AA58C452936186E00304FD9 /* brown_couch.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AA58C432936186D00304FD9 /* brown_couch.usdz */; };
 		6AA58C462936186E00304FD9 /* stool.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AA58C442936186D00304FD9 /* stool.usdz */; };
-		6AB202B02937C7EF005A3954 /* chesterfield-sofa.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB202AF2937C7EF005A3954 /* chesterfield-sofa.usdz */; };
 		6AB202B22937C9BD005A3954 /* armchair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB202B12937C9BD005A3954 /* armchair.usdz */; };
 		6AB202B42937C9D3005A3954 /* grey_sofa.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB202B32937C9D3005A3954 /* grey_sofa.usdz */; };
 		6AB202B62937C9EB005A3954 /* office_chair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB202B52937C9EB005A3954 /* office_chair.usdz */; };
@@ -39,9 +38,7 @@
 		6AB202C82937CD9F005A3954 /* piano_black.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB202C72937CD9F005A3954 /* piano_black.usdz */; };
 		6AB202CA2937CDB7005A3954 /* wooden_bookshelf.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB202C92937CDB7005A3954 /* wooden_bookshelf.usdz */; };
 		6AB202CC2937CDC4005A3954 /* wooden_table.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB202CB2937CDC4005A3954 /* wooden_table.usdz */; };
-		6AB202CE2937D2B5005A3954 /* art_desk.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB202CD2937D2B5005A3954 /* art_desk.usdz */; };
 		6AB202DF2937D31F005A3954 /* modern_tv_stand.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB202D02937D317005A3954 /* modern_tv_stand.usdz */; };
-		6AB202E32937D31F005A3954 /* wall_television.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB202D42937D319005A3954 /* wall_television.usdz */; };
 		6AB202E42937D31F005A3954 /* egg_chair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB202D52937D31A005A3954 /* egg_chair.usdz */; };
 		6AB202E52937D31F005A3954 /* table_set.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB202D62937D31A005A3954 /* table_set.usdz */; };
 		6AB202EB2937D31F005A3954 /* house_plant.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB202DC2937D31E005A3954 /* house_plant.usdz */; };
@@ -49,7 +46,6 @@
 		6AB2030A2937DD20005A3954 /* steelframe_shelve.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB202FF2937DD16005A3954 /* steelframe_shelve.usdz */; };
 		6AB2030C2937DD20005A3954 /* gaming_desk.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB203012937DD17005A3954 /* gaming_desk.usdz */; };
 		6AB2030E2937DD20005A3954 /* flowerpot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB203032937DD18005A3954 /* flowerpot.usdz */; };
-		6AB2030F2937DD20005A3954 /* striped_carpet.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 6AB203042937DD1A005A3954 /* striped_carpet.usdz */; };
 		6AD81C462940F11F00CE32D4 /* BreakingBadQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD81C452940F11F00CE32D4 /* BreakingBadQuote.swift */; };
 		6AE38A79292CC2A900F96075 /* FurnitureMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE38A78292CC2A900F96075 /* FurnitureMenu.swift */; };
 /* End PBXBuildFile section */
@@ -98,7 +94,6 @@
 		6AA58C41292E530B00304FD9 /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
 		6AA58C432936186D00304FD9 /* brown_couch.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = brown_couch.usdz; sourceTree = "<group>"; };
 		6AA58C442936186D00304FD9 /* stool.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = stool.usdz; sourceTree = "<group>"; };
-		6AB202AF2937C7EF005A3954 /* chesterfield-sofa.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "chesterfield-sofa.usdz"; sourceTree = "<group>"; };
 		6AB202B12937C9BD005A3954 /* armchair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = armchair.usdz; sourceTree = "<group>"; };
 		6AB202B32937C9D3005A3954 /* grey_sofa.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = grey_sofa.usdz; sourceTree = "<group>"; };
 		6AB202B52937C9EB005A3954 /* office_chair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = office_chair.usdz; sourceTree = "<group>"; };
@@ -108,9 +103,7 @@
 		6AB202C72937CD9F005A3954 /* piano_black.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = piano_black.usdz; sourceTree = "<group>"; };
 		6AB202C92937CDB7005A3954 /* wooden_bookshelf.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = wooden_bookshelf.usdz; sourceTree = "<group>"; };
 		6AB202CB2937CDC4005A3954 /* wooden_table.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = wooden_table.usdz; sourceTree = "<group>"; };
-		6AB202CD2937D2B5005A3954 /* art_desk.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = art_desk.usdz; sourceTree = "<group>"; };
 		6AB202D02937D317005A3954 /* modern_tv_stand.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = modern_tv_stand.usdz; sourceTree = "<group>"; };
-		6AB202D42937D319005A3954 /* wall_television.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = wall_television.usdz; sourceTree = "<group>"; };
 		6AB202D52937D31A005A3954 /* egg_chair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = egg_chair.usdz; sourceTree = "<group>"; };
 		6AB202D62937D31A005A3954 /* table_set.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = table_set.usdz; sourceTree = "<group>"; };
 		6AB202DC2937D31E005A3954 /* house_plant.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = house_plant.usdz; sourceTree = "<group>"; };
@@ -118,7 +111,6 @@
 		6AB202FF2937DD16005A3954 /* steelframe_shelve.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = steelframe_shelve.usdz; sourceTree = "<group>"; };
 		6AB203012937DD17005A3954 /* gaming_desk.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = gaming_desk.usdz; sourceTree = "<group>"; };
 		6AB203032937DD18005A3954 /* flowerpot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = flowerpot.usdz; sourceTree = "<group>"; };
-		6AB203042937DD1A005A3954 /* striped_carpet.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = striped_carpet.usdz; sourceTree = "<group>"; };
 		6AD81C452940F11F00CE32D4 /* BreakingBadQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadQuote.swift; sourceTree = "<group>"; };
 		6AE38A78292CC2A900F96075 /* FurnitureMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FurnitureMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,14 +231,11 @@
 				6AB203012937DD17005A3954 /* gaming_desk.usdz */,
 				6AB203032937DD18005A3954 /* flowerpot.usdz */,
 				6AB202FF2937DD16005A3954 /* steelframe_shelve.usdz */,
-				6AB203042937DD1A005A3954 /* striped_carpet.usdz */,
 				6AB202F12937D755005A3954 /* vase.usdz */,
 				6AB202DC2937D31E005A3954 /* house_plant.usdz */,
 				6AB202D52937D31A005A3954 /* egg_chair.usdz */,
 				6AB202D02937D317005A3954 /* modern_tv_stand.usdz */,
 				6AB202D62937D31A005A3954 /* table_set.usdz */,
-				6AB202D42937D319005A3954 /* wall_television.usdz */,
-				6AB202CD2937D2B5005A3954 /* art_desk.usdz */,
 				6AB202CB2937CDC4005A3954 /* wooden_table.usdz */,
 				6AB202C92937CDB7005A3954 /* wooden_bookshelf.usdz */,
 				6AB202C72937CD9F005A3954 /* piano_black.usdz */,
@@ -256,7 +245,6 @@
 				6AB202B52937C9EB005A3954 /* office_chair.usdz */,
 				6AB202B32937C9D3005A3954 /* grey_sofa.usdz */,
 				6AB202B12937C9BD005A3954 /* armchair.usdz */,
-				6AB202AF2937C7EF005A3954 /* chesterfield-sofa.usdz */,
 				6AA58C432936186D00304FD9 /* brown_couch.usdz */,
 				6AA58C442936186D00304FD9 /* stool.usdz */,
 				6A63C7D9292541EB009BE389 /* chair_swan.usdz */,
@@ -389,8 +377,6 @@
 			files = (
 				6A63C7DA292541EB009BE389 /* chair_swan.usdz in Resources */,
 				6AB202DF2937D31F005A3954 /* modern_tv_stand.usdz in Resources */,
-				6AB202E32937D31F005A3954 /* wall_television.usdz in Resources */,
-				6AB2030F2937DD20005A3954 /* striped_carpet.usdz in Resources */,
 				6A1CD86B29314C300084B6DD /* Localizable.strings in Resources */,
 				6AB202B62937C9EB005A3954 /* office_chair.usdz in Resources */,
 				6AB202CC2937CDC4005A3954 /* wooden_table.usdz in Resources */,
@@ -405,12 +391,10 @@
 				6AB202E42937D31F005A3954 /* egg_chair.usdz in Resources */,
 				6AB202FA2937D75C005A3954 /* vase.usdz in Resources */,
 				6A4397B5292516860000D1B7 /* Assets.xcassets in Resources */,
-				6AB202B02937C7EF005A3954 /* chesterfield-sofa.usdz in Resources */,
 				6AB202EB2937D31F005A3954 /* house_plant.usdz in Resources */,
 				6AB202CA2937CDB7005A3954 /* wooden_bookshelf.usdz in Resources */,
 				6AB2030E2937DD20005A3954 /* flowerpot.usdz in Resources */,
 				6AB202C22937CD68005A3954 /* divan_sofa.usdz in Resources */,
-				6AB202CE2937D2B5005A3954 /* art_desk.usdz in Resources */,
 				6AA58C452936186E00304FD9 /* brown_couch.usdz in Resources */,
 				6AB2030C2937DD20005A3954 /* gaming_desk.usdz in Resources */,
 				6AB202BC2937CD2B005A3954 /* wooden_bed.usdz in Resources */,

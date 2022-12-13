@@ -143,9 +143,9 @@ extension ARView: ARCoachingOverlayViewDelegate {
      Workaround for holding values inside extension
      */
     struct Holder {
-        static var currentModelName: String = "Stool"
+        static var currentModelName: String = "stool"
         static var currentObject: SelectedFurniture = SelectedFurniture("stool")
-        static var currentList: Array<SelectedFurniture> = [SelectedFurniture("Stool")]
+        static var currentList: Array<SelectedFurniture> = [SelectedFurniture("stool")]
     }
     
     var currentModelName: String {
@@ -455,9 +455,14 @@ struct ARViewContainer: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
         let arView = ARView(frame: .zero)
+        print("aaaaaa", arView.getSavedCurrentObject())
         
-        arView.currentModelName = arView.getSavedCurrentObject()
-
+        if arView.getSavedCurrentObject().isEmpty {
+            arView.currentModelName = "stool"
+        } else {
+            arView.currentModelName = arView.getSavedCurrentObject()
+        }
+        
         arView.setupConfiguration()
         
         arView.addCoaching()
@@ -475,7 +480,11 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
-        uiView.currentModelName = uiView.getSavedCurrentObject()
+        if uiView.getSavedCurrentObject().isEmpty {
+            uiView.currentModelName = "stool"
+        } else {
+            uiView.currentModelName = uiView.getSavedCurrentObject()
+        }
     }
     
 }
