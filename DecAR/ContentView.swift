@@ -455,7 +455,6 @@ struct ARViewContainer: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
         let arView = ARView(frame: .zero)
-        print("aaaaaa", arView.getSavedCurrentObject())
         
         if arView.getSavedCurrentObject().isEmpty {
             arView.currentModelName = "stool"
