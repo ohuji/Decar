@@ -29,7 +29,8 @@ Clone the project
 ```
 Download & open XCode editor
 
-Attach & configure your Iphone for dev usage.
+Ar view can only be used on Iphone.
+Attach & configure your Iphone for dev usage. 
 More info on: [Running your app on a device](https://developer.apple.com/documentation/xcode/running-your-app-in-simulator-or-on-a-device)
 
 To build and run your code, choose Product > Run, or click the Run button in your project’s toolbar.
